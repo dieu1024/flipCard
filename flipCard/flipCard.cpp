@@ -32,7 +32,7 @@ int roundScore = 0; // 라운드 점수
 int r = 1;
 int rounds[10]; //라운드별 점수 배열
 
-auto playbutton = Object::create("Images/play.png", main_scene, 550, 255);
+auto playbutton = Object::create("Images/play.png", main_scene, 520, 255);
 auto nextbutton = Object::create("Images/arrow.png", scorePage, 520, 255);
 
 string indexToImage(int index) {
