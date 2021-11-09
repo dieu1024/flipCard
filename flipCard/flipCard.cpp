@@ -1,4 +1,4 @@
-﻿//
+//
 //  main.cpp
 //
 //  Created by 김지우
@@ -39,6 +39,22 @@ string indexToImage(int index) {
     return "Images/emo" + to_string(emo[index]) + ".png";
 }
 
+string hscImage(int hap) {
+    if (hap==10) return "Images/hscore0.png";
+    else if (hap==20) return "Images/hscore1.png";
+    else return "Images/hscore2.png";
+}
+
+string uscImage(int unh) {
+    if (unh == 250) return "Images/uscore0.png";
+    else if (unh == 500) return "Images/uscore1.png";
+    else return "Images/uscore2.png";
+}
+
+string unhImage(int unhappy) {
+    return "Images/unh" + to_string(unhappy) + ".png";
+}
+
 string scoreToMes(int r, int s) {
     return to_string(r) +"라운드 점수는 " + to_string(s) + "점 입니다.";
 }
@@ -61,6 +77,10 @@ void game_init() { // 본 게임 화면
     game->enter();
 
     srand((unsigned int)time(NULL));
+
+    auto hsc = Object::create(hscImage(hap), game, 950, 650);
+    auto usc = Object::create(uscImage(unh), game, 950, 585);
+    auto unhap = Object::create(unhImage(unhappy), game, 950, 530);
 
 
     for (int ind = 0; ind < 28; ++ind) {
