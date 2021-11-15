@@ -81,6 +81,7 @@ void game_init() { // 본 게임 화면
     auto hsc = Object::create(hscImage(hap), game, 950, 650);
     auto usc = Object::create(uscImage(unh), game, 950, 585);
     auto unhap = Object::create(unhImage(unhappy), game, 950, 530);
+    auto next = Object::create("Images/next.png", game, 950, 130);
 
 
     for (int ind = 0; ind < 28; ++ind) {
@@ -91,6 +92,7 @@ void game_init() { // 본 게임 화면
 
             if (emo[ind] == 0) {
                 roundScore += hap;
+
             }
             else {
                 roundScore -= unh;
@@ -110,6 +112,22 @@ void game_init() { // 본 게임 화면
             return true;
             });
     }
+
+    next->setOnMouseCallback([&](auto, auto, auto, auto)->bool {
+
+        rounds[r - 1] = roundScore;
+        totalScore += roundScore;
+        r++;
+
+        if (r < 11) {
+            score_init();
+        }
+        else {
+            final_init();
+        }
+
+        return true;
+        });
 
     shuffle();
 
