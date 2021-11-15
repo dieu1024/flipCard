@@ -36,7 +36,7 @@ auto playbutton = Object::create("Images/play.png", main_scene, 520, 255);
 auto nextbutton = Object::create("Images/arrow.png", scorePage, 520, 255);
 
 string indexToImage(int index) {
-    return "Images/emo" + to_string(emo[index]) + ".png";
+    return "Images/emot" + to_string(emo[index]) + ".png";
 }
 
 string hscImage(int hap) {
@@ -85,7 +85,7 @@ void game_init() { // 본 게임 화면
 
 
     for (int ind = 0; ind < 28; ++ind) {
-        cards[ind] = Object::create("Images/back.png", game, 100 + (ind % 7) * (100 + 20), 40 + (ind / 7) * (150 + 20));
+        cards[ind] = Object::create("Images/cardback.png", game, 100 + (ind % 7) * (100 + 20), 40 + (ind / 7) * (150 + 20));
 
         cards[ind]->setOnMouseCallback([&, ind](auto, auto, auto, auto)->bool {
             cards[ind]->setImage(indexToImage(ind));
