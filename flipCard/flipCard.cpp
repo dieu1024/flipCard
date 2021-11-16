@@ -81,7 +81,7 @@ void game_init() { // 본 게임 화면
     auto hsc = Object::create(hscImage(hap), game, 950, 650);
     auto usc = Object::create(uscImage(unh), game, 950, 585);
     auto unhap = Object::create(unhImage(unhappy), game, 950, 530);
-    auto next = Object::create("Images/comp.png", game, 950, 130);
+    auto next = Object::create("Images/next.png", game, 950, 130);
 
 
     for (int ind = 0; ind < 28; ++ind) {
